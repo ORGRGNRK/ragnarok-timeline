@@ -4,6 +4,7 @@ Verified on an Apple M2 Mac with macOS 27.0.1:
 
 - Twelve Node tests: classification, explicit actor attribution, unknown exit handling, payload omission, secret masking, private event-file modes, fail-open malformed input, symlink protection, installer idempotence, uninstall preserving unrelated hooks, invalid config preservation, and execution through a path containing spaces/quotes.
 - Six Swift tests: actor/kind parsing, unknown exits (including JSON null), display redaction, Codex metadata filtering, partial UTF-8 tail reads/truncation, and rotated files.
+- Standalone viewer opened locally; actor filters, live Codex tool metadata, and event details were inspected. No hook installation was performed on the real user account.
 - App builds for arm64 and x86_64. Both Mach-O slices declare macOS 14.0 minimum. Ad-hoc signature verification passes.
 - No live coding-model requests and no installation into real Claude/Codex settings were made while testing this standalone package. Temporary directories were used.
 

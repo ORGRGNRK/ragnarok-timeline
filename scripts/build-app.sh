@@ -23,6 +23,8 @@ cat > "$APP/Contents/Info.plist" <<'PLIST'
 </dict></plist>
 PLIST
 (git rev-parse --short HEAD 2>/dev/null || echo development) > "$APP/Contents/Resources/commit"
+# Remove build-machine debug paths before signing a distributable binary.
+strip -S "$APP/Contents/MacOS/RagnarokTimeline"
 codesign --force --sign - "$APP"
 codesign --verify --strict "$APP"
 lipo -archs "$APP/Contents/MacOS/RagnarokTimeline"

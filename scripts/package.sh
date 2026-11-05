@@ -15,5 +15,5 @@ done
 mkdir -p "$BUNDLE/dist"
 /usr/bin/ditto "dist/Ragnarok Timeline.app" "$BUNDLE/dist/Ragnarok Timeline.app"
 (cd "$TMP" && /usr/bin/zip -qr "$OLDPWD/release/ragnarok-timeline-macos.zip" ragnarok-timeline)
-/usr/bin/shasum -a 256 release/ragnarok-timeline-macos.zip > release/ragnarok-timeline-macos.zip.sha256
+(cd release && /usr/bin/shasum -a 256 ragnarok-timeline-macos.zip > ragnarok-timeline-macos.zip.sha256)
 echo 'Release ZIP and SHA-256 written to release/'
